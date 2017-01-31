@@ -18,6 +18,7 @@ namespace CyrilicTranslator_1_1
             { 'С', "S"  }, { 'Т', "T"  }, { 'У', "U"   }, { 'Ф', "F"  }, { 'Х', "X"  }, { 'Ц', "CZ" },
             { 'Ч', "CH" }, { 'Ш', "SH" }, { 'Щ', "SHH" }, { 'Ъ', "``" }, { 'Ы', "Y`" }, { 'Ь', "`"  },
             { 'Э', "E`" }, { 'Ю', "YU" }, { 'Я', "YA"  } };
+        
         /// <summary>
         /// Сonverts all Cyrilic characters from InputString to
         /// Latin characters, doesn't change non-Cyrilic characters 
@@ -29,20 +30,21 @@ namespace CyrilicTranslator_1_1
         {
             string OutputString = string.Empty;
             string value;
-            char CyrilicChar;
 
             for (int CountChar = 0; CountChar < InputString.Length; CountChar++)
             {
-                CyrilicChar = InputString[CountChar];
-                if (CyrilicToLatinDictionary.TryGetValue(CyrilicChar,  out value ))
+                if (CyrilicToLatinDictionary.TryGetValue(Char.ToUpper(InputString[CountChar]),  out value ))
                 {
+                    if (Char.IsLower(InputString[CountChar]))
+                    {
+                        value = value.ToLower();
+                    }
                     OutputString += value;
                 }
                 else
                 {
-                    OutputString += CyrilicChar;
+                    OutputString += InputString[CountChar];
                 }
-                
             }
             return OutputString;
         }
@@ -57,7 +59,7 @@ namespace CyrilicTranslator_1_1
             {
                 Console.WriteLine("\nEnter your sentences in Cyrilic, please:\n");
                 Console.WriteLine("\nYour sentenses in Latin:\n\n" +
-                                  CyrilicTranslator.TranslateString(Console.ReadLine().ToUpper()));
+                                  CyrilicTranslator.TranslateString(Console.ReadLine()));
                 Console.Write("\nIf you want to continue, please, press 'y', else any key -  ");
 
             } while (string.Compare(Console.ReadLine(), "y", true) == 0);

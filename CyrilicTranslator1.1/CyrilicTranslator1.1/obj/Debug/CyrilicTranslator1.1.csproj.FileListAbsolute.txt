@@ -1,0 +1,6 @@
+c:\users\tushka\documents\visual studio 2015\Projects\CyrilicTranslator1.1\CyrilicTranslator1.1\bin\Debug\CyrilicTranslator1.1.exe.config
+c:\users\tushka\documents\visual studio 2015\Projects\CyrilicTranslator1.1\CyrilicTranslator1.1\obj\Debug\CyrilicTranslator1.1.csprojResolveAssemblyReference.cache
+c:\users\tushka\documents\visual studio 2015\Projects\CyrilicTranslator1.1\CyrilicTranslator1.1\bin\Debug\CyrilicTranslator1.1.exe
+c:\users\tushka\documents\visual studio 2015\Projects\CyrilicTranslator1.1\CyrilicTranslator1.1\bin\Debug\CyrilicTranslator1.1.pdb
+c:\users\tushka\documents\visual studio 2015\Projects\CyrilicTranslator1.1\CyrilicTranslator1.1\obj\Debug\CyrilicTranslator1.1.exe
+c:\users\tushka\documents\visual studio 2015\Projects\CyrilicTranslator1.1\CyrilicTranslator1.1\obj\Debug\CyrilicTranslator1.1.pdb

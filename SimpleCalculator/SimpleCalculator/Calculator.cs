@@ -39,6 +39,7 @@ namespace SimpleCalculator
                 }
                 finally
                 {
+                    //если блок пустой можно его вообще не писать
                 }
             }
             else
@@ -273,7 +274,7 @@ namespace SimpleCalculator
 
                 Console.Write("Want to repeat then press 'y' - ");
                 Result = Console.ReadLine();
-            } while (Result == "y" || Result == "Y");
+            } while (Result == "y" || Result == "Y");// while(Result.ToLower()=='y')
             
 
 

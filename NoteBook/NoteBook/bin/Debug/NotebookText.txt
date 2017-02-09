@@ -1,0 +1,2 @@
+Dima;37;Moscow;567890123
+Masha;20;Almaty;123456789

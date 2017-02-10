@@ -19,7 +19,7 @@ namespace NoteBook
         /// <returns></returns>
        public static bool FileRead(ref List<Person> listP)
        {
-            string[] FileP, Tstring;
+            string[] FileP, Tstring;//лучше объявлять переменные отдельно на каждой строке. Если толко это не сильно увеличит кол во строк 
             int TempI = 0;
 
             try
@@ -77,7 +77,8 @@ namespace NoteBook
                     return false;
                 }
             }
-            else return false;
+            else return false;//три ретурна лучше заменить на один. Можно объявить переменную res, в трех местах присваивать ей значение
+                              //а потом один раз сделать ретурн
         }
 
     }

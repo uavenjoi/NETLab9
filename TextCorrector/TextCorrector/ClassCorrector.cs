@@ -13,7 +13,7 @@ namespace TextCorrector
         /// <summary>
         /// Creates dictionary of right words
         /// </summary>
-        internal static bool DictCreate(ref List<string> DictC)
+        internal static bool DictCreate(ref List<string> DictC)//лучше делать обычные не статик методы
         {
             try
             {
@@ -35,11 +35,11 @@ namespace TextCorrector
         /// </summary>
         /// <param name="Word"></param>
         /// <returns></returns>
-       internal static bool WrongWord(string Word, List<string> Dict)
+       internal static bool WrongWord(string Word, List<string> Dict)//параметры лучше писать с маленькой буквы
         {
             foreach (string WDict in Dict)
             {
-                if (WDict.Trim() == Word) { return false; }
+                if (WDict.Trim() == Word) { return false; }//String.Compare() лучше, и регистр можно упустить из виду
             }
             return true;
         }
@@ -72,7 +72,8 @@ namespace TextCorrector
             string TempStr;
             List<string> DictC = new List<string>();
 
-            if (DictionaryCL.DictCreate(ref DictC))
+            if (DictionaryCL.DictCreate(ref DictC))//без лишенй необходимости лучше не использовать ref параметры.
+                                                      //dict=DictionaryCL.DictCreate() смотрится лучше
             {
                 for (int Index = 0; Index < TextCor.Length; Index++)
                 {

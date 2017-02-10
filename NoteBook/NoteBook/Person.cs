@@ -11,7 +11,7 @@ namespace NoteBook
     /// </summary>
     public class Person
     {
-        string Pname;
+        string Pname;//поле итак находится внутри Person, можно не добавлять префикс P. нужно стараться называть все более натурально
         int Page;
         string Paddress;
         string Pphone;

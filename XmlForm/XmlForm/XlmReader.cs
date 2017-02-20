@@ -32,6 +32,7 @@ namespace XmlForm
         /// </summary>
         /// <param name="file"></param>
         /// <returns></returns>
+        //Обычно так называют классы. Метод лучше назвать глаголом. Типа GetFileContent()
         public static string FileReader(string file)
         {
             string str = "" ;
@@ -53,12 +54,12 @@ namespace XmlForm
         /// </summary>
         /// <param name="xmlString"></param>
         /// <param name="name"></param>
-        /// <returns></returns>
+        /// <returns>GetObjectsFromXml()</returns>
         public static List<ObjModel> XReader(string xmlString, string name)
         {
-            ObjModel obj = new ObjModel();
-            List<ObjModel> objs = new List<ObjModel>();
-            XmlDocument doc = new XmlDocument();
+            var obj = new ObjModel();
+            var = new List<ObjModel>();
+            var doc = new XmlDocument();
 
             if (xmlString != "")
             {

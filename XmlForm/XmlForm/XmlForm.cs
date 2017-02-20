@@ -14,24 +14,24 @@ namespace XmlForm
     {
         public XmlForm()
         {
+            //такие вещи нужно писать в отдельных методах
             int Count;
-            string XmlString;
+            string XmlString = XlmReader.FileReader("config.xml");
                   
-            XmlString = XlmReader.FileReader("config.xml");
             if (XmlString != "")
             {
                 // Change form's properties
-                foreach (ObjModel Fobject in XlmReader.XReader(XmlString, "Form"))
+                foreach (var item in XlmReader.XReader(XmlString, "Form"))//с большой буквы локальные переменные лучше не называть. 
                 {
-                    this.Name = Fobject.name;
-                    this.Text = Fobject.name;
-                    this.BackColor = Color.FromArgb(Fobject.rgbColor[0], Fobject.rgbColor[1], Fobject.rgbColor[2]);
-                    this.Size = new Size(Fobject.width, Fobject.height);
+                    this.Name = item.name;
+                    this.Text = item.name;
+                    this.BackColor = Color.FromArgb(item.rgbColor[0], item.rgbColor[1], item.rgbColor[2]);
+                    this.Size = new Size(item.width, item.height);
                 }
                 // Load buttons to form
                 var Buttons = new List<Button>();
                 Count = 0;
-                foreach (ObjModel Fobject in XlmReader.XReader(XmlString, "button"))
+                foreach (var Fobject in XlmReader.XReader(XmlString, "button"))
                 {
                     Buttons.Add(ButtonLoader(Fobject));
                     this.Controls.Add(Buttons[Count++]);
@@ -46,6 +46,7 @@ namespace XmlForm
                 }
             }
             InitializeComponent();
+            //и потом вызывать после InitializeComponent. А еще лучше по событию form_load
         }
 
         /// <summary>
@@ -70,9 +71,9 @@ namespace XmlForm
         /// </summary>
         /// <param name="Fobj"></param>
         /// <returns></returns>
-        Label LabelLoader(ObjModel Fobj)
+        Label LabelLoader(ObjModel Fobj)//obj было бы более понятней что это такое
         {
-            Label obj = new Label();
+            Label label = new Label();
 
             obj.Location = new Point(Fobj.left, Fobj.top);
             obj.Name = Fobj.name;
